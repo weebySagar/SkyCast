@@ -1,0 +1,42 @@
+.search {
+    background-image: url("../../images/cloudbg.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 30vh;
+    position: relative;
+
+    .search-input {
+        position: absolute;
+        top: 40%;
+        left: 0;
+        right: 0;
+
+        .input-wrapper {
+            background-color: white;
+            box-shadow: 0 4px 2px -2px white;
+        }
+
+        input {
+            width: 100%;
+            height: 100%;
+            outline: none;
+            border: none;
+        }
+    }
+
+    .opacity-layer {
+        background: linear-gradient(180deg, rgba(4, 21, 45, 0), #F7F7F8 79.17%);
+        bottom: 0;
+        height: 30px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+    }
+
+    .searched-city-lists {
+        background-color: white;
+        z-index: 2;
+        position: relative;
+    }
+}

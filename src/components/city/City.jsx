@@ -15,14 +15,13 @@ const City = observer(() => {
       queryKey: ["cities"],
       queryFn: fetchCities,
       initialPageParam: 0,
-      getNextPageParam: lastPage => lastPage.nextPage,
+      getNextPageParam: (lastPage) => lastPage.nextPage,
     });
 
   const { ref, inView } = useInView();
 
   useEffect(() => {
     if (rootStore.pagination.currentPage === 0 && data) {
-      // console.log(data);
       rootStore.setCities(data.pages[0].data);
     }
     if (inView) {
@@ -52,9 +51,6 @@ const City = observer(() => {
               ref={ref}
               isFetchingNextPage={isFetchingNextPage}
             />
-            {/* <div ref={ref} className="my-4 d-flex justify-content-center">
-              {isFetchingNextPage && <Spinner />}
-            </div> */}
           </div>
         </div>
       </InnerWrapper>

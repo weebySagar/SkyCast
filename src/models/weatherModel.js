@@ -1,6 +1,14 @@
 import { types } from "mobx-state-tree";
 
+const SunInfoModel = types.model({
+    sunrise: types.Date,
+    sunset: types.Date
+})
 
+const TempInfoModel = types.model({
+    minTemp: types.number,
+    maxTemp: types.number
+})
 const Weather = types.model({
     current: types.optional(types.frozen({
         temperature: types.number,
@@ -8,11 +16,17 @@ const Weather = types.model({
         humidity: types.number,
         windSpeed: types.number,
         visibility: types.number,
-        uvIndex: types.number,
-    })),
-    forecast: types.optional(types.frozen({
+        airPollution: types.number,
         date: types.Date,
-        temperature: types.number
+        name: types.string,
+        main: types.string,
+        sunInfo: SunInfoModel,
+        tempInfo: TempInfoModel
+    }), {}),
+    forecast: types.array(types.frozen({
+        temperature: types.number,
+        day: types.Date,
+        main: types.string
     }))
 
 });

@@ -6,8 +6,8 @@ const City = types.model({
     countryName: types.string,
     timeZone: types.string,
     countryCode: types.string,
-    latitude: types.optional,
-    longitude: types.optional
+    latitude: types.number,
+    longitude: types.number
 })
 
 export default City;

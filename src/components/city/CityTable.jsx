@@ -21,11 +21,11 @@ const CityTable = observer(
             </thead>
 
             <tbody>
-              {cities?.map(city => (
+              {cities?.map((city) => (
                 <tr key={city.geonameId}>
                   <td>
                     <Link
-                      to={`/weather?lat=${city.latitude}&long=${city.longitude}`}
+                      to={`/weather?lat=${city.latitude}&lon=${city.longitude}`}
                     >
                       {city.name}
                     </Link>

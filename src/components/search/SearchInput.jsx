@@ -30,10 +30,9 @@ const SearchInput = () => {
     queryFn: () => fetchCity(debouncedSearchTerm),
   });
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     const city = e.target.value;
     setSearchedCity(city);
-    // setTimeout(() => setSearchedCity(prevCity => prevCity + city), 500);
   };
 
   if (data) {
